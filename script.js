@@ -1,12 +1,9 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbwx3RtvfIyAZkNm6egTUwhBZXZsxLo3V7IuB9INmz7wG8DlmhN_daNDTQoDnChq4abz/exec";
 let testAnswer = 3610;
 
-console.log("Javascript opened.");
 async function verifyPIN(pin) {
-  console.log("Attempting to verify");
   const res = await fetch(`${scriptURL}?pin=${encodeURIComponent(pin)}`);
   const data = await res.json();
-  console.log("Verify process sucessfull.");
 
   if (!data.allowed) {
     giveError();
