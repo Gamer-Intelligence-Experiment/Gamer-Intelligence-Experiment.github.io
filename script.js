@@ -11,6 +11,7 @@ async function verifyPIN(pin) {
   }else {
   startTest();
   }
+}
 
 function giveError() {
     document.getElementById('status').innerHTML = '<p>You are not allowed to take the test. This could be because:</p><ol><li>You already took it.</li><li>You did not sign up for our experiment.</li><li>You used an incorrect link.</li><li>We made a mistake.</li></ol>';
