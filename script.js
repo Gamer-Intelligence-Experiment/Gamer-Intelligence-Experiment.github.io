@@ -2,8 +2,10 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbwx3RtvfIyAZkNm6egTUw
 let testAnswer = 3610;
 
 async function verifyPIN(pin) {
+  console.log("Attempting to verify");
   const res = await fetch(`${scriptURL}?pin=${encodeURIComponent(pin)}`);
   const data = await res.json();
+  console.log("Verify process sucessfull.");
 
   if (!data.allowed) {
     giveError();
