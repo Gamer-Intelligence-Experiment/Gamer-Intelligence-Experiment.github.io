@@ -57,6 +57,8 @@ function checkAnswer() {
   if (document.getElementById("answer").value==testAnswer) {
     //submit
     submitTest();
+    document.getElementById('test').style.display = 'none';
+    document.getElementById('done').style.display = 'block';
   } else {
     alert("Incorrect, we promise. Please keep trying.");
   }
