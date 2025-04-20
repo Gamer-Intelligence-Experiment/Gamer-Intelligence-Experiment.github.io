@@ -1,5 +1,6 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbwx3RtvfIyAZkNm6egTUwhBZXZsxLo3V7IuB9INmz7wG8DlmhN_daNDTQoDnChq4abz/exec";
 let testAnswer = 3610;
+const startTime = Date.now();
 
 async function verifyPIN(pin) {
   const res = await fetch(`${scriptURL}?pin=${encodeURIComponent(pin)}`);
@@ -50,4 +51,23 @@ if (pin) {
   verifyPIN(pin);
 } else {
   giveError;
+}
+
+function checkAnswer() {
+  if (document.getElementById("answer").value==testAnswer) {
+    //submit
+    submitTest();
+  } else {
+    alert("Incorrect, we promise. Please keep trying.");
+  }
+}
+
+function submitTest() {
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify({ pin: pin, time: Date.now()-startTime}),
+    headers: {"Content-Type": "application/json"}})
+    .then(response => response.text())
+    .then(result => {console.log("Server response:", result);})
+    .catch(error => {console.error("Error sending data:", error);});
 }
