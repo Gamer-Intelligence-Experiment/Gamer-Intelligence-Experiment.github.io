@@ -65,11 +65,17 @@ function checkAnswer() {
 }
 
 function submitTest() {
-  fetch(scriptURL, {
+  const formURL = "https://docs.google.com/forms/d/1o055QqkDx_DVr60dEPyJSK608tN1lHmF4SiKROEmvZ4/formResponse";
+
+  const formData = new FormData();
+  formData.append("entry.464330742", pin);
+  formData.append("entry.1342333440", String(startTime-Date.now())); 
+
+  fetch(formURL, {
     method: "POST",
-    body: JSON.stringify({ pin: pin, time: Date.now()-startTime}),
-    headers: {"Content-Type": "application/json"}})
-    .then(response => response.text())
-    .then(result => {console.log("Server response:", result);})
-    .catch(error => {console.error("Error sending data:", error);});
+    mode: "no-cors", // necessary for Google Forms
+    body: formData,
+  })
+  .then(() => console.log("Data sent successfully"))
+  .catch(error => console.error("Error sending data:", error));
 }
