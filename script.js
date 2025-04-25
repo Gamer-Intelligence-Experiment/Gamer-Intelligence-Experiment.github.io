@@ -69,7 +69,7 @@ function submitTest() {
 
   const formData = new FormData();
   formData.append("entry.464330742", pin);
-  formData.append("entry.1342333440", String(startTime-Date.now())); 
+  formData.append("entry.1342333440", String(Date.now()-startTime)); 
 
   fetch(formURL, {
     method: "POST",
