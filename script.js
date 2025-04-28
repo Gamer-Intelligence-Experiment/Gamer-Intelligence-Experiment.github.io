@@ -1,6 +1,6 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbwx3RtvfIyAZkNm6egTUwhBZXZsxLo3V7IuB9INmz7wG8DlmhN_daNDTQoDnChq4abz/exec";
 let testAnswer = 3610;
-const startTime = Date.now();
+let startTime = 0;
 
 async function verifyPIN(pin) {
   const res = await fetch(`${scriptURL}?pin=${encodeURIComponent(pin)}`);
@@ -22,6 +22,7 @@ function startTest() {
   generateQuestion();
   document.getElementById('status').style.display = 'none';
   document.getElementById('test').style.display = 'block';
+  startTime = Date.now();
 }
 
 function generateQuestion() {
