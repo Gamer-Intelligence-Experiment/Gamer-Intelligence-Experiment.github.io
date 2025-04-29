@@ -1,5 +1,5 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbwx3RtvfIyAZkNm6egTUwhBZXZsxLo3V7IuB9INmz7wG8DlmhN_daNDTQoDnChq4abz/exec";
-let testAnswer = 3610;
+let testAnswer = 3910;
 let startTime = 0;
 
 async function verifyPIN(pin) {
@@ -38,7 +38,7 @@ function generateQuestion() {
   const daughtersSon=rc("Jeffery","Keith");
   const daughtersDaughter=rc("Janice","Jill");*/
   
-  document.getElementById('questionText').innerHTML = "Bananas cost $1.50. Apples cost as many cents as the number of bananas Billy likes. Jane is married to Joe. Bob had a kid named Boe with Janet. X’s dad was Billy and X’s mom was Janey. Jane and Joe’s kids are Bob and Billy. Jane likes 7 bananas and 5 less apples than Boe. Joe likes 3 more bananas than the amount of apples his wife likes, and Joe likes one fifth the amount of apples Boe likes. Bob likes 6 times more bananas than his son and 4 less apples than the amount of bananas Joe likes. Janet likes half as many bananas as Janey and twice the amount of apples as Jane. Boe likes 3 bananas and 20 apples. Billy likes one less banana than his mom and one more apple than Joe. Janey likes twice as many bananas than X, and two more bananas than the amount of apples Billy likes. X likes 8 more bananas than Bob and 6 less apples than Joe.<br><br>If Boe’s cousin got only bananas and as many bananas as he liked, and X’s uncle’s son’s grandpa got only apples and half as many as he liked, how many cents would this cost?";
+  document.getElementById('questionText').innerHTML = "Bananas cost $1.50. Apples cost as many cents as the number of apples Billy likes. Jane is married to Joe. Bob and Janet had a kid named Boe. X’s dad was Billy and X’s mom was Janey. Jane and Joe’s kids are Bob and Billy. Jane likes 7 bananas and 5 less apples than Boe. Joe likes 3 more bananas than the amount of apples his wife likes, and Joe likes one fifth the amount of apples Boe likes. Bob likes 6 times as many bananas as his son and 4 less apples than the amount of bananas Joe likes. Janet likes half as many bananas as Janey and twice the amount of apples as Jane. Boe likes 3 bananas and 20 apples. Billy likes one less banana than his mom and one more apple than Joe. Janey likes twice as many bananas than X, and two more bananas than the amount of apples Billy likes. X likes 8 more bananas than Bob and 6 less apples than Joe.<br><br>If Boe’s cousin (the one we have information about) got only bananas and as many bananas as he liked, and X’s uncle’s son’s grandpa (the one we have information about) got only apples and half as many as he liked, how many cents would this cost?";
 }
 
 function rc(c1,c2) {
